@@ -73,19 +73,24 @@ const cthulthuGreen = 4;
 const cthulthuBrown = 9;
 const cthulthuBlue = 2;
 
-const cthulthuRandomGreen = [];
-const cthulthuRandomBrown = [];
-const cthulthuRandomBlue = [];
+const cthulthuRandomGreen = (greenCards.sort(()=>Math.random()-0.5)).slice(0, cthulthuGreen);
+console.log(cthulthuRandomGreen);
+// const cthulthuRandomBrown = [];
+const cthulthuRandomBrown = (brownCards.sort(()=>Math.random()-0.5)).slice(0, cthulthuBrown);
+console.log(cthulthuRandomBrown);
+// const cthulthuRandomBlue = [];
+const cthulthuRandomBlue = (blueCards.sort(()=>Math.random()-0.5)).slice(0, cthulthuBlue);
+console.log(cthulthuRandomBlue);
 
-for(let i = 0; i < cthulthuGreen; i++) {
-  cthulthuRandomGreen.push(greenCards[getRandomCards(0, greenCards.length - 1)]);
-}
-for(let i = 0; i < cthulthuBrown; i++) {
-  cthulthuRandomBrown.push(brownCards[getRandomCards(0, brownCards.length - 1)]);
-}
-for(let i = 0; i < cthulthuBlue; i++) {
-  cthulthuRandomBlue.push(blueCards[getRandomCards(0, blueCards.length - 1)]);
-}
+// for(let i = 0; i < cthulthuGreen; i++) {
+//   cthulthuRandomGreen.push(greenCards[getRandomCards(0, greenCards.length - 1)]);
+// }
+// for(let i = 0; i < cthulthuBrown; i++) {
+//   cthulthuRandomBrown.push(brownCards[getRandomCards(0, brownCards.length - 1)]);
+// }
+// for(let i = 0; i < cthulthuBlue; i++) {
+//   cthulthuRandomBlue.push(blueCards[getRandomCards(0, blueCards.length - 1)]);
+// }
 
 // console.log(cthulthuRandomGreen);
 // console.log(cthulthuRandomBrown);
@@ -99,7 +104,7 @@ const cthulthuStage1 = [
   cthulthuRandomBlue[1],
 ];
 const cthulthuStage1Shuffle = cthulthuStage1.sort(()=>Math.random()-0.5);
-console.log(cthulthuStage1Shuffle);
+// console.log(cthulthuStage1Shuffle);
 
 // stage2 = 1 green, 3 brown, 0 blue
 const cthulthuStage2 = [
@@ -109,7 +114,7 @@ const cthulthuStage2 = [
   cthulthuRandomBrown[4],
 ];
 const cthulthuStage2Shuffle = cthulthuStage2.sort(()=>Math.random()-0.5);
-console.log(cthulthuStage2Shuffle);
+// console.log(cthulthuStage2Shuffle);
 
 // stage3 = 3 green, 4 brown, 0 blue
 const cthulthuStage3 = [
@@ -122,7 +127,7 @@ const cthulthuStage3 = [
   cthulthuRandomBrown[8],
 ];
 const cthulthuStage3Shuffle = cthulthuStage3.sort(()=>Math.random()-0.5);
-console.log(cthulthuStage3Shuffle);
+// console.log(cthulthuStage3Shuffle);
 
 // собираем единую колоду
 const cthulthuFinalDeck = cthulthuStage1.concat(cthulthuStage2, cthulthuStage3);
@@ -184,6 +189,7 @@ topCard.addEventListener('click', function(){
   // уменьшаем массив
   cthulthuFinalDeck.shift()
 });
+
 
 console.log('Самооценкa своей работы:\n\n 50 баллов\n\n1. На выбор предоставляется 1 карта древнего +5 баллов\n2. На выбор предоставляется 1 уровень сложности +5 баллов\n3. Карты замешиваются согласно правилам игры +40 баллов');
 window.onload = function() {
